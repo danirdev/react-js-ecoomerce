@@ -1,0 +1,859 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "iPhone 15 Pro Max",
+      "category": "smartphones",
+      "brand": "Apple",
+      "price": 1299.99,
+      "originalPrice": 1499.99,
+      "discount": 13,
+      "image": "https://images.unsplash.com/photo-1592286927505-c7c365bf6f0e?w=500",
+      "images": [
+        "https://images.unsplash.com/photo-1592286927505-c7c365bf6f0e?w=500",
+        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500",
+        "https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?w=500"
+      ],
+      "description": "El iPhone más avanzado. Chip A17 Pro, cámara de 48MP con zoom óptico 5x",
+      "features": [
+        "Pantalla Super Retina XDR de 6.7 pulgadas",
+        "Chip A17 Pro",
+        "Sistema de cámaras Pro",
+        "Batería de larga duración",
+        "5G ultra rápido"
+      ],
+      "specifications": {
+        "screen": "6.7 pulgadas",
+        "processor": "A17 Pro",
+        "ram": "8GB",
+        "storage": "256GB",
+        "camera": "48MP + 12MP + 12MP",
+        "battery": "4422 mAh",
+        "os": "iOS 17"
+      },
+      "colors": ["Titanio Natural", "Titanio Azul", "Titanio Blanco", "Titanio Negro"],
+      "stock": 45,
+      "rating": 4.9,
+      "reviews": 2847,
+      "isFeatured": true,
+      "isNew": true,
+      "freeShipping": true
+    },
+    {
+      "id": 2,
+      "name": "Samsung Galaxy S24 Ultra",
+      "category": "smartphones",
+      "brand": "Samsung",
+      "price": 1199.99,
+      "originalPrice": 1299.99,
+      "discount": 8,
+      "image": "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=500",
+      "images": [
+        "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=500",
+        "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500"
+      ],
+      "description": "Potencia y elegancia con S Pen integrado. Pantalla Dynamic AMOLED 2X",
+      "features": [
+        "Pantalla de 6.8 pulgadas 120Hz",
+        "Snapdragon 8 Gen 3",
+        "Cámara de 200MP",
+        "S Pen incluido",
+        "Batería de 5000mAh"
+      ],
+      "specifications": {
+        "screen": "6.8 pulgadas",
+        "processor": "Snapdragon 8 Gen 3",
+        "ram": "12GB",
+        "storage": "512GB",
+        "camera": "200MP + 50MP + 12MP + 10MP",
+        "battery": "5000 mAh",
+        "os": "Android 14"
+      },
+      "colors": ["Negro Fantasma", "Gris Titanio", "Violeta"],
+      "stock": 38,
+      "rating": 4.8,
+      "reviews": 1923,
+      "isFeatured": true,
+      "isNew": true,
+      "freeShipping": true
+    },
+    {
+      "id": 3,
+      "name": "MacBook Pro 16\" M3 Max",
+      "category": "laptops",
+      "brand": "Apple",
+      "price": 3499.99,
+      "originalPrice": 3999.99,
+      "discount": 13,
+      "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500",
+      "images": [
+        "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500",
+        "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500"
+      ],
+      "description": "Rendimiento extremo para profesionales. M3 Max con hasta 128GB de RAM",
+      "features": [
+        "Chip M3 Max de Apple",
+        "Pantalla Liquid Retina XDR de 16 pulgadas",
+        "Hasta 22 horas de batería",
+        "6 puertos Thunderbolt 4",
+        "Magic Keyboard retroiluminado"
+      ],
+      "specifications": {
+        "screen": "16.2 pulgadas",
+        "processor": "Apple M3 Max",
+        "ram": "36GB",
+        "storage": "1TB SSD",
+        "graphics": "GPU de 40 núcleos",
+        "battery": "Hasta 22 horas",
+        "os": "macOS Sonoma"
+      },
+      "colors": ["Gris Espacial", "Plata"],
+      "stock": 12,
+      "rating": 4.9,
+      "reviews": 1456,
+      "isFeatured": true,
+      "isNew": false,
+      "freeShipping": true
+    },
+    {
+      "id": 4,
+      "name": "Dell XPS 15",
+      "category": "laptops",
+      "brand": "Dell",
+      "price": 1899.99,
+      "originalPrice": 2199.99,
+      "discount": 14,
+      "image": "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=500",
+      "images": [
+        "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=500"
+      ],
+      "description": "Laptop premium con pantalla InfinityEdge 4K y potencia Intel de 13va gen",
+      "features": [
+        "Pantalla OLED 4K táctil",
+        "Intel Core i7-13700H",
+        "NVIDIA RTX 4060",
+        "Diseño ultradelgado",
+        "Wi-Fi 6E"
+      ],
+      "specifications": {
+        "screen": "15.6 pulgadas 4K OLED",
+        "processor": "Intel Core i7-13700H",
+        "ram": "32GB DDR5",
+        "storage": "1TB SSD",
+        "graphics": "NVIDIA GeForce RTX 4060 8GB",
+        "battery": "Hasta 13 horas",
+        "os": "Windows 11 Pro"
+      },
+      "colors": ["Platino", "Grafito"],
+      "stock": 28,
+      "rating": 4.7,
+      "reviews": 892,
+      "isFeatured": false,
+      "isNew": false,
+      "freeShipping": true
+    },
+    {
+      "id": 5,
+      "name": "AirPods Pro 2",
+      "category": "audio",
+      "brand": "Apple",
+      "price": 249.99,
+      "originalPrice": 279.99,
+      "discount": 11,
+      "image": "https://images.unsplash.com/photo-1606841837239-c5a1a4a07af7?w=500",
+      "images": [
+        "https://images.unsplash.com/photo-1606841837239-c5a1a4a07af7?w=500"
+      ],
+      "description": "Audio espacial personalizado y cancelación de ruido activa adaptativa",
+      "features": [
+        "Cancelación activa de ruido mejorada",
+        "Audio espacial personalizado",
+        "Modo ambiente adaptativo",
+        "Resistencia al agua y sudor",
+        "Hasta 6 horas de batería"
+      ],
+      "specifications": {
+        "type": "In-ear",
+        "connectivity": "Bluetooth 5.3",
+        "battery": "6h (auriculares) + 30h (estuche)",
+        "charging": "USB-C, MagSafe, Qi",
+        "waterResistance": "IPX4",
+        "chipset": "H2"
+      },
+      "colors": ["Blanco"],
+      "stock": 156,
+      "rating": 4.8,
+      "reviews": 3421,
+      "isFeatured": true,
+      "isNew": false,
+      "freeShipping": true
+    },
+    {
+      "id": 6,
+      "name": "Sony WH-1000XM5",
+      "category": "audio",
+      "brand": "Sony",
+      "price": 399.99,
+      "originalPrice": 449.99,
+      "discount": 11,
+      "image": "https://images.unsplash.com/photo-1545127398-14699f92334b?w=500",
+      "images": [
+        "https://images.unsplash.com/photo-1545127398-14699f92334b?w=500"
+      ],
+      "description": "Los mejores auriculares con cancelación de ruido del mercado",
+      "features": [
+        "Cancelación de ruido líder en la industria",
+        "8 micrófonos para llamadas cristalinas",
+        "30 horas de batería",
+        "Carga rápida: 3min = 3h",
+        "Audio de alta resolución"
+      ],
+      "specifications": {
+        "type": "Over-ear",
+        "connectivity": "Bluetooth 5.2, NFC",
+        "battery": "30 horas",
+        "charging": "USB-C",
+        "weight": "250g",
+        "driver": "30mm"
+      },
+      "colors": ["Negro", "Plata"],
+      "stock": 73,
+      "rating": 4.9,
+      "reviews": 2156,
+      "isFeatured": true,
+      "isNew": false,
+      "freeShipping": true
+    },
+    {
+      "id": 7,
+      "name": "iPad Pro 12.9\" M2",
+      "category": "tablets",
+      "brand": "Apple",
+      "price": 1099.99,
+      "originalPrice": 1299.99,
+      "discount": 15,
+      "image": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=500",
+      "images": [
+        "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=500"
+      ],
+      "description": "La experiencia iPad definitiva con pantalla Liquid Retina XDR",
+      "features": [
+        "Pantalla Liquid Retina XDR",
+        "Chip M2",
+        "Cámara TrueDepth frontal",
+        "Compatible con Apple Pencil",
+        "Thunderbolt / USB 4"
+      ],
+      "specifications": {
+        "screen": "12.9 pulgadas",
+        "processor": "Apple M2",
+        "ram": "8GB",
+        "storage": "256GB",
+        "camera": "12MP + 10MP ultra gran angular",
+        "battery": "Hasta 10 horas",
+        "os": "iPadOS 17"
+      },
+      "colors": ["Gris Espacial", "Plata"],
+      "stock": 34,
+      "rating": 4.8,
+      "reviews": 987,
+      "isFeatured": false,
+      "isNew": false,
+      "freeShipping": true
+    },
+    {
+      "id": 8,
+      "name": "Samsung Galaxy Tab S9 Ultra",
+      "category": "tablets",
+      "brand": "Samsung",
+      "price": 1199.99,
+      "originalPrice": 1399.99,
+      "discount": 14,
+      "image": "https://images.unsplash.com/photo-1585790050230-5dd28404f174?w=500",
+      "images": [
+        "https://images.unsplash.com/photo-1585790050230-5dd28404f174?w=500"
+      ],
+      "description": "Tablet gigante con pantalla AMOLED de 14.6 pulgadas y S Pen incluido",
+      "features": [
+        "Pantalla Dynamic AMOLED 2X de 14.6\"",
+        "Snapdragon 8 Gen 2",
+        "S Pen incluido",
+        "Resistente al agua IP68",
+        "Batería de 11200mAh"
+      ],
+      "specifications": {
+        "screen": "14.6 pulgadas 120Hz",
+        "processor": "Snapdragon 8 Gen 2",
+        "ram": "12GB",
+        "storage": "512GB",
+        "camera": "13MP + 8MP",
+        "battery": "11200 mAh",
+        "os": "Android 13"
+      },
+      "colors": ["Negro Grafito", "Beige"],
+      "stock": 19,
+      "rating": 4.7,
+      "reviews": 543,
+      "isFeatured": false,
+      "isNew": true,
+      "freeShipping": true
+    },
+    {
+      "id": 9,
+      "name": "Apple Watch Series 9",
+      "category": "smartwatches",
+      "brand": "Apple",
+      "price": 429.99,
+      "originalPrice": 499.99,
+      "discount": 14,
+      "image": "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=500",
+      "images": [
+        "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=500"
+      ],
+      "description": "El smartwatch más avanzado con pantalla siempre activa y S9 chip",
+      "features": [
+        "Chip S9 ultra rápido",
+        "Pantalla siempre activa",
+        "Sensores de salud avanzados",
+        "Resistencia al agua 50m",
+        "watchOS 10"
+      ],
+      "specifications": {
+        "screen": "1.9 pulgadas OLED",
+        "processor": "Apple S9",
+        "storage": "64GB",
+        "battery": "Hasta 18 horas",
+        "waterResistance": "50m",
+        "connectivity": "GPS + Cellular"
+      },
+      "colors": ["Medianoche", "Luz Estelar", "Plata", "Rojo"],
+      "stock": 89,
+      "rating": 4.8,
+      "reviews": 1876,
+      "isFeatured": true,
+      "isNew": true,
+      "freeShipping": true
+    },
+    {
+      "id": 10,
+      "name": "Samsung Galaxy Watch 6 Classic",
+      "category": "smartwatches",
+      "brand": "Samsung",
+      "price": 379.99,
+      "originalPrice": 429.99,
+      "discount": 12,
+      "image": "https://images.unsplash.com/photo-1617043786394-f977fa12eddf?w=500",
+      "images": [
+        "https://images.unsplash.com/photo-1617043786394-f977fa12eddf?w=500"
+      ],
+      "description": "Smartwatch premium con bisel giratorio y monitoreo de salud completo",
+      "features": [
+        "Bisel giratorio físico",
+        "Pantalla Super AMOLED",
+        "Monitoreo de sueño avanzado",
+        "Más de 90 modos de ejercicio",
+        "Wear OS 4"
+      ],
+      "specifications": {
+        "screen": "1.5 pulgadas Super AMOLED",
+        "processor": "Exynos W930",
+        "storage": "16GB",
+        "battery": "Hasta 40 horas",
+        "waterResistance": "5ATM + IP68",
+        "connectivity": "Bluetooth, Wi-Fi, LTE"
+      },
+      "colors": ["Negro", "Plata"],
+      "stock": 67,
+      "rating": 4.6,
+      "reviews": 1234,
+      "isFeatured": false,
+      "isNew": false,
+      "freeShipping": true
+    },
+    {
+      "id": 11,
+      "name": "Canon EOS R6 Mark II",
+      "category": "cameras",
+      "brand": "Canon",
+      "price": 2499.99,
+      "originalPrice": 2799.99,
+      "discount": 11,
+      "image": "https://images.unsplash.com/photo-1606978448648-3fab8a8b5e15?w=500",
+      "images": [
+        "https://images.unsplash.com/photo-1606978448648-3fab8a8b5e15?w=500"
+      ],
+      "description": "Cámara mirrorless profesional con sensor full-frame de 24.2MP",
+      "features": [
+        "Sensor CMOS Full-Frame 24.2MP",
+        "Hasta 40 fps en ráfaga",
+        "Video 4K 60p sin recorte",
+        "Estabilización IBIS de 8 stops",
+        "Dual Pixel CMOS AF II"
+      ],
+      "specifications": {
+        "sensor": "Full-Frame CMOS 24.2MP",
+        "videoResolution": "4K 60p",
+        "iso": "100-102400",
+        "burstSpeed": "40 fps",
+        "screenSize": "3.0 pulgadas táctil",
+        "weight": "588g"
+      },
+      "colors": ["Negro"],
+      "stock": 15,
+      "rating": 4.9,
+      "reviews": 432,
+      "isFeatured": true,
+      "isNew": true,
+      "freeShipping": true
+    },
+    {
+      "id": 12,
+      "name": "Sony PlayStation 5",
+      "category": "gaming",
+      "brand": "Sony",
+      "price": 499.99,
+      "originalPrice": 499.99,
+      "discount": 0,
+      "image": "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=500",
+      "images": [
+        "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=500"
+      ],
+      "description": "Consola de nueva generación con gráficos 4K y SSD ultra rápido",
+      "features": [
+        "Gráficos en 4K hasta 120fps",
+        "SSD ultra rápido",
+        "Ray tracing en hardware",
+        "Audio 3D Tempest",
+        "DualSense con haptic feedback"
+      ],
+      "specifications": {
+        "cpu": "AMD Zen 2",
+        "gpu": "AMD RDNA 2",
+        "ram": "16GB GDDR6",
+        "storage": "825GB SSD",
+        "optical": "Ultra HD Blu-ray",
+        "resolution": "8K"
+      },
+      "colors": ["Blanco"],
+      "stock": 42,
+      "rating": 4.8,
+      "reviews": 5678,
+      "isFeatured": true,
+      "isNew": false,
+      "freeShipping": true
+    },
+    {
+      "id": 13,
+      "name": "Xbox Series X",
+      "category": "gaming",
+      "brand": "Microsoft",
+      "price": 499.99,
+      "originalPrice": 499.99,
+      "discount": 0,
+      "image": "https://images.unsplash.com/photo-1621259182978-fbf93132d53d?w=500",
+      "images": [
+        "https://images.unsplash.com/photo-1621259182978-fbf93132d53d?w=500"
+      ],
+      "description": "La consola Xbox más potente con 12 teraflops de potencia",
+      "features": [
+        "12 teraflops de potencia",
+        "Juegos en 4K hasta 120fps",
+        "SSD NVMe de 1TB",
+        "Quick Resume",
+        "Xbox Game Pass"
+      ],
+      "specifications": {
+        "cpu": "AMD Zen 2",
+        "gpu": "AMD RDNA 2",
+        "ram": "16GB GDDR6",
+        "storage": "1TB SSD",
+        "optical": "4K UHD Blu-ray",
+        "resolution": "8K"
+      },
+      "colors": ["Negro"],
+      "stock": 38,
+      "rating": 4.7,
+      "reviews": 4321,
+      "isFeatured": true,
+      "isNew": false,
+      "freeShipping": true
+    },
+    {
+      "id": 14,
+      "name": "LG OLED C3 65\"",
+      "category": "tvs",
+      "brand": "LG",
+      "price": 1799.99,
+      "originalPrice": 2299.99,
+      "discount": 22,
+      "image": "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=500",
+      "images": [
+        "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=500"
+      ],
+      "description": "Smart TV OLED 4K con procesador α9 Gen6 AI y webOS 23",
+      "features": [
+        "Panel OLED evo",
+        "Procesador α9 Gen6 AI",
+        "Dolby Vision IQ y Dolby Atmos",
+        "HDMI 2.1 con 4K 120Hz",
+        "webOS 23 con Magic Remote"
+      ],
+      "specifications": {
+        "screen": "65 pulgadas",
+        "resolution": "4K (3840 x 2160)",
+        "panel": "OLED evo",
+        "refreshRate": "120Hz",
+        "hdmi": "4x HDMI 2.1",
+        "smartTV": "webOS 23"
+      },
+      "colors": ["Negro"],
+      "stock": 23,
+      "rating": 4.9,
+      "reviews": 876,
+      "isFeatured": true,
+      "isNew": false,
+      "freeShipping": true
+    },
+    {
+      "id": 15,
+      "name": "Samsung 4K Monitor 32\"",
+      "category": "monitors",
+      "brand": "Samsung",
+      "price": 399.99,
+      "originalPrice": 499.99,
+      "discount": 20,
+      "image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500",
+      "images": [
+        "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500"
+      ],
+      "description": "Monitor 4K UHD de 32 pulgadas con HDR10 y FreeSync",
+      "features": [
+        "Resolución 4K UHD",
+        "HDR10",
+        "AMD FreeSync",
+        "Tiempo de respuesta 4ms",
+        "Múltiples puertos"
+      ],
+      "specifications": {
+        "screen": "32 pulgadas",
+        "resolution": "3840 x 2160",
+        "panelType": "IPS",
+        "refreshRate": "60Hz",
+        "responseTime": "4ms",
+        "ports": "HDMI, DisplayPort, USB-C"
+      },
+      "colors": ["Negro"],
+      "stock": 56,
+      "rating": 4.6,
+      "reviews": 1543,
+      "isFeatured": false,
+      "isNew": false,
+      "freeShipping": true
+    },
+    {
+      "id": 16,
+      "name": "Logitech MX Master 3S",
+      "category": "accessories",
+      "brand": "Logitech",
+      "price": 99.99,
+      "originalPrice": 129.99,
+      "discount": 23,
+      "image": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=500",
+      "images": [
+        "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=500"
+      ],
+      "description": "Mouse inalámbrico profesional con sensor de 8K DPI",
+      "features": [
+        "Sensor de 8000 DPI",
+        "MagSpeed Electromagnetic scroll",
+        "Hasta 70 días de batería",
+        "USB-C recargable",
+        "Multi-device (3 dispositivos)"
+      ],
+      "specifications": {
+        "sensor": "Darkfield 8000 DPI",
+        "connectivity": "Bluetooth, USB",
+        "battery": "Hasta 70 días",
+        "buttons": "7 botones programables",
+        "compatibility": "Windows, macOS, Linux"
+      },
+      "colors": ["Negro", "Gris Pálido"],
+      "stock": 134,
+      "rating": 4.8,
+      "reviews": 2345,
+      "isFeatured": false,
+      "isNew": false,
+      "freeShipping": true
+    },
+    {
+      "id": 17,
+      "name": "Keychron K8 Pro",
+      "category": "accessories",
+      "brand": "Keychron",
+      "price": 109.99,
+      "originalPrice": 119.99,
+      "discount": 8,
+      "image": "https://images.unsplash.com/photo-1595225476474-87563907a212?w=500",
+      "images": [
+        "https://images.unsplash.com/photo-1595225476474-87563907a212?w=500"
+      ],
+      "description": "Teclado mecánico inalámbrico hot-swappable con RGB",
+      "features": [
+        "Hot-swappable switches",
+        "Conexión triple: Bluetooth, USB-C, 2.4GHz",
+        "Batería de 4000mAh",
+        "QMK/VIA programable",
+        "RGB per-key"
+      ],
+      "specifications": {
+        "layout": "TKL (87 teclas)",
+        "switches": "Gateron G Pro",
+        "connectivity": "Bluetooth 5.1, USB-C, 2.4GHz",
+        "battery": "4000mAh (hasta 240h)",
+        "keycaps": "PBT Double-shot",
+        "compatibility": "Windows, macOS, Linux"
+      },
+      "colors": ["Negro", "Blanco"],
+      "stock": 78,
+      "rating": 4.7,
+      "reviews": 987,
+      "isFeatured": false,
+      "isNew": true,
+      "freeShipping": true
+    },
+    {
+      "id": 18,
+      "name": "Anker PowerCore 26800mAh",
+      "category": "accessories",
+      "brand": "Anker",
+      "price": 65.99,
+      "originalPrice": 79.99,
+      "discount": 18,
+      "image": "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=500",
+      "images": [
+        "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=500"
+      ],
+      "description": "Power bank de alta capacidad con carga rápida y 3 puertos USB",
+      "features": [
+        "26800mAh de capacidad",
+        "3 puertos USB",
+        "PowerIQ 2.0",
+        "Carga rápida",
+        "Protección MultiProtect"
+      ],
+      "specifications": {
+        "capacity": "26800mAh",
+        "input": "Micro USB / USB-C",
+        "output": "3x USB-A (máx 3A cada uno)",
+        "totalOutput": "6A",
+        "weight": "490g",
+        "dimensions": "18 x 8.1 x 2.2 cm"
+      },
+      "colors": ["Negro"],
+      "stock": 201,
+      "rating": 4.6,
+      "reviews": 3456,
+      "isFeatured": false,
+      "isNew": false,
+      "freeShipping": true
+    },
+    {
+      "id": 19,
+      "name": "Google Pixel 8 Pro",
+      "category": "smartphones",
+      "brand": "Google",
+      "price": 999.99,
+      "originalPrice": 1099.99,
+      "discount": 9,
+      "image": "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500",
+      "images": [
+        "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500"
+      ],
+      "description": "El mejor smartphone de Google con IA avanzada y cámara profesional",
+      "features": [
+        "Google Tensor G3",
+        "Pantalla LTPO OLED de 6.7\"",
+        "Cámara de 50MP con IA",
+        "Magic Eraser y Best Take",
+        "7 años de actualizaciones"
+      ],
+      "specifications": {
+        "screen": "6.7 pulgadas LTPO OLED 120Hz",
+        "processor": "Google Tensor G3",
+        "ram": "12GB",
+        "storage": "256GB",
+        "camera": "50MP + 48MP + 48MP",
+        "battery": "5050 mAh",
+        "os": "Android 14"
+      },
+      "colors": ["Obsidiana", "Porcelana", "Bay"],
+      "stock": 31,
+      "rating": 4.7,
+      "reviews": 1234,
+      "isFeatured": false,
+      "isNew": true,
+      "freeShipping": true
+    },
+    {
+      "id": 20,
+      "name": "DJI Mini 4 Pro",
+      "category": "drones",
+      "brand": "DJI",
+      "price": 759.99,
+      "originalPrice": 859.99,
+      "discount": 12,
+      "image": "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=500",
+      "images": [
+        "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=500"
+      ],
+      "description": "Drone ultraligero con cámara 4K/60fps y detección omnidireccional",
+      "features": [
+        "Video 4K/60fps HDR",
+        "Detección de obstáculos omnidireccional",
+        "Transmisión OcuSync 4.0 hasta 20km",
+        "Vuelo de hasta 34 minutos",
+        "Peso menor a 249g"
+      ],
+      "specifications": {
+        "camera": "1/1.3\" CMOS 48MP",
+        "video": "4K/60fps HDR, 4K/100fps",
+        "flightTime": "34 minutos",
+        "maxSpeed": "57.6 km/h",
+        "weight": "249g",
+        "transmission": "OcuSync 4.0 (20km)"
+      },
+      "colors": ["Gris"],
+      "stock": 27,
+      "rating": 4.9,
+      "reviews": 654,
+      "isFeatured": true,
+      "isNew": true,
+      "freeShipping": true
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "smartphones",
+      "displayName": "Smartphones",
+      "description": "Los últimos modelos de teléfonos inteligentes",
+      "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500"
+    },
+    {
+      "id": 2,
+      "name": "laptops",
+      "displayName": "Laptops",
+      "description": "Computadoras portátiles de alto rendimiento",
+      "image": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500"
+    },
+    {
+      "id": 3,
+      "name": "audio",
+      "displayName": "Audio",
+      "description": "Auriculares y sistemas de audio premium",
+      "image": "https://images.unsplash.com/photo-1545127398-14699f92334b?w=500"
+    },
+    {
+      "id": 4,
+      "name": "tablets",
+      "displayName": "Tablets",
+      "description": "Tablets para trabajo y entretenimiento",
+      "image": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=500"
+    },
+    {
+      "id": 5,
+      "name": "smartwatches",
+      "displayName": "Smartwatches",
+      "description": "Relojes inteligentes con funciones avanzadas",
+      "image": "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=500"
+    },
+    {
+      "id": 6,
+      "name": "cameras",
+      "displayName": "Cámaras",
+      "description": "Cámaras profesionales y accesorios",
+      "image": "https://images.unsplash.com/photo-1606978448648-3fab8a8b5e15?w=500"
+    },
+    {
+      "id": 7,
+      "name": "gaming",
+      "displayName": "Gaming",
+      "description": "Consolas y accesorios para gaming",
+      "image": "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=500"
+    },
+    {
+      "id": 8,
+      "name": "tvs",
+      "displayName": "Televisores",
+      "description": "Smart TVs y pantallas de alta definición",
+      "image": "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=500"
+    },
+    {
+      "id": 9,
+      "name": "monitors",
+      "displayName": "Monitores",
+      "description": "Monitores para trabajo y gaming",
+      "image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500"
+    },
+    {
+      "id": 10,
+      "name": "accessories",
+      "displayName": "Accesorios",
+      "description": "Accesorios y periféricos",
+      "image": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=500"
+    },
+    {
+      "id": 11,
+      "name": "drones",
+      "displayName": "Drones",
+      "description": "Drones con cámara y accesorios",
+      "image": "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=500"
+    }
+  ],
+  "brands": [
+    { "id": 1, "name": "Apple", "logo": "🍎" },
+    { "id": 2, "name": "Samsung", "logo": "📱" },
+    { "id": 3, "name": "Sony", "logo": "🎮" },
+    { "id": 4, "name": "Dell", "logo": "💻" },
+    { "id": 5, "name": "LG", "logo": "📺" },
+    { "id": 6, "name": "Canon", "logo": "📷" },
+    { "id": 7, "name": "Microsoft", "logo": "🎯" },
+    { "id": 8, "name": "Logitech", "logo": "🖱️" },
+    { "id": 9, "name": "Anker", "logo": "🔋" },
+    { "id": 10, "name": "Google", "logo": "🔍" },
+    { "id": 11, "name": "DJI", "logo": "🚁" },
+    { "id": 12, "name": "Keychron", "logo": "⌨️" }
+  ],
+  "featuredBanners": [
+    {
+      "id": 1,
+      "title": "iPhone 15 Pro",
+      "subtitle": "Titanio. Tan fuerte. Tan ligero. Tan Pro.",
+      "image": "https://images.unsplash.com/photo-1592286927505-c7c365bf6f0e?w=1200",
+      "cta": "Comprar ahora",
+      "link": "/productos/1",
+      "bgColor": "from-blue-600 to-purple-600"
+    },
+    {
+      "id": 2,
+      "title": "Black Friday",
+      "subtitle": "Hasta 40% de descuento en productos seleccionados",
+      "image": "https://images.unsplash.com/photo-1607083206968-13611e3d76db?w=1200",
+      "cta": "Ver ofertas",
+      "link": "/ofertas",
+      "bgColor": "from-red-600 to-orange-600"
+    },
+    {
+      "id": 3,
+      "title": "Gaming Zone",
+      "subtitle": "PS5 y Xbox Series X disponibles",
+      "image": "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=1200",
+      "cta": "Explorar",
+      "link": "/categorias/gaming",
+      "bgColor": "from-green-600 to-teal-600"
+    }
+  ],
+  "cart": [],
+  "wishlist": [],
+  "orders": []
+}
