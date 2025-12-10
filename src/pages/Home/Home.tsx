@@ -2,20 +2,9 @@ import { useEffect, useState } from 'react'
 import Hero from '../../components/iu/Hero/Hero'
 import CardProduct from '../../components/iu/CardProduct/CardProduct'
 
-interface Product {
-  id: number
-  name: string
-  price: number
-  originalPrice?: number
-  discount?: number
-  image: string
-  rating: number
-  reviews: number
-  freeShipping: boolean
-}
-
 const Home = () => {
-  const [products, setProducts] = useState<Product[]>([])
+
+  const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
 
   const getProducts = async () => {
@@ -57,7 +46,7 @@ const Home = () => {
           </div>
         ) : (
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-            {products.map(product => (
+            {products.map((product: any) => (
               <CardProduct key={product.id} product={product} />
             ))}
           </div>
