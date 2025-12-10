@@ -1,6 +1,24 @@
 import { Link } from 'react-router-dom'
+import { useContext } from 'react'
+import { CartContext } from '../../../context/CartContext'
+
 
 const CardProduct = ({ product }: any) => {
+
+  const {dispatch} = useContext(CartContext)
+
+  const item = {
+    id: product.id,
+    name: product.name,
+    price: product.price,
+    image: product.image,
+    quantity: 1,
+  }
+
+  const handleAddToCart = () => {
+    dispatch({ type: 'ADD_TO_CART', payload: item })
+  }
+
   return (
     <div className="bg-gray-800 rounded-lg overflow-hidden hover:shadow-xl transition border border-gray-700">
       
@@ -54,7 +72,7 @@ const CardProduct = ({ product }: any) => {
         </div>
 
         {/* Add to Cart Button */}
-        <button className="w-full bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold py-2.5 px-4 rounded transition">
+        <button onClick={() => handleAddToCart(item)} className="w-full bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold py-2.5 px-4 rounded transition cursor-pointer">
           Agregar al carrito
         </button>
       </div>
