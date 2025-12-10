@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 export const CartModal = ({ handleShowCartModal }: any) => {
   return (
     <>
-      {/* Overlay */}
+      {/* Overlay con BLUR */}
       <div 
-        className="fixed inset-0 bg-black bg-opacity-50 z-40"
+        className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40"
         onClick={handleShowCartModal}
       />
 
