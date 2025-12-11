@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { useState } from 'react'
 import { CartModal } from '../CartModal/CartModal.tsx'
 import useCartContext from '../../../hooks/useCartContext.ts'
@@ -6,8 +6,8 @@ import useCartContext from '../../../hooks/useCartContext.ts'
 export const Navbar = () => {
 
   const [showCartModal, setShowCartModal] = useState(false)
-
   const {state: {cartItems}} = useCartContext()
+  const location = useLocation()
 
   return (
     <>
@@ -30,6 +30,7 @@ export const Navbar = () => {
             </div>
 
             {/* Icons */}
+            {location.pathname !== '/checkout' && (
             <div className="flex items-center gap-6">
               <button 
                 onClick={() => setShowCartModal(!showCartModal)}
@@ -40,18 +41,14 @@ export const Navbar = () => {
                   {cartItems.length}
                 </span>
               </button>
-              <Link to="/cuenta" className="text-gray-300 hover:text-white">
-                Cuenta
-              </Link>
+              {showCartModal && (
+                <CartModal handleShowCartModal={() => setShowCartModal(false)} />
+              )}
             </div>
+            )}
           </div>
         </div>
       </nav>
-
-      {/* Modal fuera del nav */}
-      {showCartModal && (
-        <CartModal handleShowCartModal={() => setShowCartModal(false)} />
-      )}
     </>
   )
 }
