@@ -3,6 +3,8 @@ import type { ChangeEvent, FocusEvent, FormEvent } from 'react'
 import Cards from 'react-credit-cards-2'
 import 'react-credit-cards-2/dist/es/styles-compiled.css'
 import {toast} from 'sonner'
+import useCartContext from '../../../hooks/useCartContext'
+import type { CartProduct } from '../../../interface'
 
 interface CardState {
   number: string
@@ -20,6 +22,8 @@ const CardCredit = () => {
     cvc: '',
     focus: ''
   })
+
+  const {dispatch} = useCartContext()
 
   const [loading, setLoading] = useState(false)
 
@@ -60,6 +64,7 @@ const CardCredit = () => {
         focus: ''
       })
       alert('¡Pago procesado con éxito! 🎉')
+      dispatch({type: 'CLEAR_CART', payload: {} as CartProduct})
     }, 2000)
   }
 
