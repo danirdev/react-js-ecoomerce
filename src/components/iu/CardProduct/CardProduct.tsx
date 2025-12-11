@@ -1,13 +1,17 @@
 import { Link } from 'react-router-dom'
 import { useContext } from 'react'
 import { CartContext } from '../../../context/CartContext'
+import type { Product, CartProduct } from '../../../interface'
 
+interface Props {
+  product: Product
+}
 
-const CardProduct = ({ product }: any) => {
+const CardProduct: React.FC<Props> = ({ product }) => {
 
   const {dispatch} = useContext(CartContext)
 
-  const item = {
+  const item: CartProduct = {
     id: product.id,
     name: product.name,
     price: product.price,
@@ -15,7 +19,7 @@ const CardProduct = ({ product }: any) => {
     quantity: 1,
   }
 
-  const handleAddToCart = () => {
+  const handleAddToCart = (item: CartProduct) => {
     dispatch({ type: 'ADD_TO_CART', payload: item })
   }
 

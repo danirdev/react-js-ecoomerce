@@ -1,6 +1,11 @@
 import { Link } from 'react-router-dom'
+import type { FC } from 'react'
 
-export const CartModal = ({ handleShowCartModal }: any) => {
+interface Props {
+  handleShowCartModal: () => void
+}
+
+export const CartModal: FC<Props> = ({ handleShowCartModal }) => {
   return (
     <>
       {/* Overlay con BLUR */}

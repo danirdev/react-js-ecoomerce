@@ -1,27 +1,23 @@
 import { useEffect, useState } from 'react'
 import Hero from '../../components/iu/Hero/Hero'
 import CardProduct from '../../components/iu/CardProduct/CardProduct'
+import { getProducts } from '../../service'
+import type { Product } from '../../interface'
 
 const Home = () => {
 
-  const [products, setProducts] = useState([])
+  const [products, setProducts] = useState<Product[]>([])
   const [loading, setLoading] = useState(true)
-
-  const getProducts = async () => {
-    try {
-      setLoading(true)
-      const response = await fetch('http://localhost:3001/products')
-      const data = await response.json()
-      setProducts(data)
-    } catch (error) {
-      console.error('Error fetching products:', error)
-    } finally {
-      setLoading(false)
-    }
-  }
+  const [error, setError] = useState(false)
 
   useEffect(() => {
-    getProducts()
+    getProducts().then((data) => {
+      setProducts(data)
+    }).catch(() => {
+      setError(true)
+    }).finally(() => {
+      setLoading(false)
+    })
   }, [])
 
   return (
@@ -50,6 +46,10 @@ const Home = () => {
               <CardProduct key={product.id} product={product} />
             ))}
           </div>
+        )}
+        {error && (<div className="text-red-500 mt-4">
+          Error al cargar los productos. Por favor, inténtalo de nuevo más tarde.
+        </div>
         )}
       </div>
     </div>
