@@ -19,6 +19,11 @@ export const CartModal: FC<Props> = ({ handleShowCartModal }) => {
     dispatch({ type: 'REMOVE_FROM_CART', payload: item })
   }
 
+  const totalPay = () => {
+    const total = cartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0)
+    return total.toLocaleString()
+  }
+ 
   return (
     <>
       {/* Overlay con BLUR */}
@@ -95,7 +100,7 @@ export const CartModal: FC<Props> = ({ handleShowCartModal }) => {
         <div className="border-t border-gray-700 p-4 bg-gray-900">
           <div className="flex items-center justify-between mb-4">
             <span className="text-gray-400 text-lg">Total:</span>
-            <span className="text-white text-2xl font-bold">$2,599.98</span>
+            <span className="text-white text-2xl font-bold">${totalPay()} </span>
           </div>
           <Link
             to="/checkout"

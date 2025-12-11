@@ -1,9 +1,13 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { CartModal } from '../CartModal/CartModal.tsx'
+import useCartContext from '../../../hooks/useCartContext.ts'
 
 export const Navbar = () => {
+
   const [showCartModal, setShowCartModal] = useState(false)
+
+  const {state: {cartItems}} = useCartContext()
 
   return (
     <>
@@ -33,7 +37,7 @@ export const Navbar = () => {
               >
                 Carrito
                 <span className="absolute -top-2 -right-3 bg-yellow-400 text-gray-900 text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
-                  0
+                  {cartItems.length}
                 </span>
               </button>
               <Link to="/cuenta" className="text-gray-300 hover:text-white">
