@@ -1,8 +1,12 @@
 import type { Product } from '../interface'
   
-export const getProducts = async (): Promise<Product[]> => {
+export const getProducts = async (page = 1): Promise<Product[]> => {
+  const limit = 10
+  const start = (page - 1) * limit
+  const end = start + limit
+  
   try {
-    const response = await fetch('http://localhost:3001/products')
+    const response = await fetch(`http://localhost:3001/products?_start=${start}&_end=${end}`)
     
     if (!response.ok) {
       throw new Error('Error fetching products')
