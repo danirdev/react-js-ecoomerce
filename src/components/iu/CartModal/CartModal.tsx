@@ -1,11 +1,24 @@
 import { Link } from 'react-router-dom'
 import type { FC } from 'react'
+import useCartContext from '../../../hooks/useCartContext'
+import type { CartProduct } from '../../../interface'
 
 interface Props {
   handleShowCartModal: () => void
 }
 
 export const CartModal: FC<Props> = ({ handleShowCartModal }) => {
+
+  const { state: {cartItems}, dispatch } = useCartContext()
+
+  const addToCart = (item: CartProduct) => {  
+    dispatch({ type: 'ADD_TO_CART', payload: item })
+  }
+
+  const removeToCart = (item: CartProduct) => {  
+    dispatch({ type: 'REMOVE_FROM_CART', payload: item })
+  }
+
   return (
     <>
       {/* Overlay con BLUR */}
@@ -42,31 +55,38 @@ export const CartModal: FC<Props> = ({ handleShowCartModal }) => {
               </tr>
             </thead>
             <tbody>
-              <tr className="border-b border-gray-700">
+              {cartItems.map((item) => (
+              <tr key={item.id} className="border-b border-gray-700">
                 <td className="p-3">
                   <div className="flex items-center gap-3">
                     <img 
-                      src="https://images.unsplash.com/photo-1592286927505-c7c365bf6f0e?w=500"
-                      alt="iPhone"
+                      src={item.image}
+                      alt={item.name}
                       className="w-16 h-16 object-contain bg-gray-900 rounded"
                     />
-                    <p className="text-white text-sm">iPhone 15 Pro Max</p>
+                    <p className="text-white text-sm"> {item.name} </p>
                   </div>
                 </td>
                 <td className="p-3">
                   <div className="flex items-center justify-center gap-2">
-                    <button className="bg-gray-700 hover:bg-gray-600 text-white w-8 h-8 rounded">-</button>
-                    <span className="text-white font-semibold w-8 text-center">2</span>
-                    <button className="bg-gray-700 hover:bg-gray-600 text-white w-8 h-8 rounded">+</button>
+                    <button onClick={() => removeToCart(item)} className="bg-gray-700 hover:bg-gray-600 text-white w-8 h-8 rounded">-</button>
+                    <span className="text-white font-semibold w-8 text-center"> 
+                      {item.quantity} 
+                    </span>
+                    <button onClick={() => addToCart(item)} className="bg-gray-700 hover:bg-gray-600 text-white w-8 h-8 rounded">+</button>
                   </div>
                 </td>
                 <td className="p-3 text-right">
-                  <p className="text-white font-bold">$2,599.98</p>
+                  <p className="text-white font-bold"> {item.price} </p>
                 </td>
                 <td className="p-3 text-center">
                   <button className="text-red-400 hover:text-red-300">🗑️</button>
                 </td>
               </tr>
+              )
+              )}
+              
+
             </tbody>
           </table>
         </div>

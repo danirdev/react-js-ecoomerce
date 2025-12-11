@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
-import { useContext } from 'react'
-import { CartContext } from '../../../context/CartContext'
 import type { Product, CartProduct } from '../../../interface'
+import useCartContext from '../../../hooks/useCartContext'
 
 interface Props {
   product: Product
@@ -9,7 +8,7 @@ interface Props {
 
 const CardProduct: React.FC<Props> = ({ product }) => {
 
-  const {dispatch} = useContext(CartContext)
+  const {dispatch} = useCartContext()
 
   const item: CartProduct = {
     id: product.id,
