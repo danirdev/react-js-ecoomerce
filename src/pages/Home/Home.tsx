@@ -3,6 +3,7 @@ import Hero from '../../components/iu/Hero/Hero'
 import CardProduct from '../../components/iu/CardProduct/CardProduct'
 import { getProducts } from '../../service'
 import type { Product } from '../../interface'
+import {Toaster} from 'sonner'
 
 const Home = () => {
 
@@ -24,6 +25,8 @@ const Home = () => {
     <div className="bg-gray-900 min-h-screen">
       <Hero />
       
+      <Toaster position="bottom-right" richColors />
+
       <div className="container mx-auto px-4 py-8">
         <div className="mb-6">
           <h2 className="text-2xl font-bold text-white mb-2">

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import type { Product, CartProduct } from '../../../interface'
 import useCartContext from '../../../hooks/useCartContext'
+import {toast} from 'sonner'
 
 interface Props {
   product: Product
@@ -20,6 +21,7 @@ const CardProduct: React.FC<Props> = ({ product }) => {
 
   const handleAddToCart = (item: CartProduct) => {
     dispatch({ type: 'ADD_TO_CART', payload: item })
+    toast.success('Producto agregado al carrito')
   }
 
   return (
