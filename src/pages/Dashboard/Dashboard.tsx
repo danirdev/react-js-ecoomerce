@@ -1,8 +1,21 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
+import { useMutation } from "react-query"
 import { useNavigate } from "react-router-dom"
-
+import type { Product } from "../../interface"
+import { createProduct } from "../../service/products.service"
 
 const Dashboard = () => {
+    
+  const [product, setProduct] = useState({
+    name: '',
+    price: 0,
+    originalPrice: 0,
+    discount: 0,
+    image: '',
+    rating: 0,
+    reviews: 0,
+    freeShipping: false
+  })
 
   const navigate = useNavigate()
 
@@ -16,6 +29,24 @@ const Dashboard = () => {
   const handleLogout = () => {
     localStorage.removeItem('userLogin')
     navigate('/login')
+  }
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, type, value, checked } = e.target
+    
+    setProduct({
+        ...product,
+        [name]: type === 'checkbox' ? checked : value
+    })
+    }
+
+  const mutation = useMutation((newProduct: Product) => {
+    return createProduct(newProduct)
+  })
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    mutation.mutate(product as Product)
   }
 
   return (
@@ -46,396 +77,144 @@ const Dashboard = () => {
         </div>
 
         {/* Formulario */}
-        <div className="max-w-4xl mx-auto bg-gray-800 rounded-lg shadow-2xl border border-gray-700 p-8">
+        <div className="max-w-3xl mx-auto bg-gray-800 rounded-lg shadow-2xl border border-gray-700 p-8">
           <h2 className="text-2xl font-bold text-white mb-6">
             Agregar nuevo producto
           </h2>
 
-          <form className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6">
             
-            {/* Información básica */}
-            <div className="bg-gray-700 p-6 rounded-lg">
-              <h3 className="text-xl font-bold text-white mb-4">Información básica</h3>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Nombre del producto */}
-                <div className="md:col-span-2">
-                  <label className="block text-gray-400 text-sm font-semibold mb-2">
-                    Nombre del producto *
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="iPhone 15 Pro Max"
-                    className="w-full px-4 py-3 bg-gray-600 border border-gray-500 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                  />
-                </div>
-
-                {/* Categoría */}
-                <div>
-                  <label className="block text-gray-400 text-sm font-semibold mb-2">
-                    Categoría *
-                  </label>
-                  <select
-                    name="category"
-                    className="w-full px-4 py-3 bg-gray-600 border border-gray-500 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                  >
-                    <option value="">Seleccionar categoría</option>
-                    <option value="smartphones">Smartphones</option>
-                    <option value="laptops">Laptops</option>
-                    <option value="audio">Audio</option>
-                    <option value="tablets">Tablets</option>
-                    <option value="smartwatches">Smartwatches</option>
-                    <option value="cameras">Cámaras</option>
-                    <option value="gaming">Gaming</option>
-                    <option value="tvs">Televisores</option>
-                    <option value="monitors">Monitores</option>
-                    <option value="accessories">Accesorios</option>
-                    <option value="drones">Drones</option>
-                  </select>
-                </div>
-
-                {/* Marca */}
-                <div>
-                  <label className="block text-gray-400 text-sm font-semibold mb-2">
-                    Marca *
-                  </label>
-                  <input
-                    type="text"
-                    name="brand"
-                    placeholder="Apple"
-                    className="w-full px-4 py-3 bg-gray-600 border border-gray-500 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                  />
-                </div>
-
-                {/* Precio */}
-                <div>
-                  <label className="block text-gray-400 text-sm font-semibold mb-2">
-                    Precio *
-                  </label>
-                  <input
-                    type="number"
-                    name="price"
-                    step="0.01"
-                    placeholder="1299.99"
-                    className="w-full px-4 py-3 bg-gray-600 border border-gray-500 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                  />
-                </div>
-
-                {/* Precio original */}
-                <div>
-                  <label className="block text-gray-400 text-sm font-semibold mb-2">
-                    Precio original
-                  </label>
-                  <input
-                    type="number"
-                    name="originalPrice"
-                    step="0.01"
-                    placeholder="1499.99"
-                    className="w-full px-4 py-3 bg-gray-600 border border-gray-500 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                  />
-                </div>
-
-                {/* Descuento */}
-                <div>
-                  <label className="block text-gray-400 text-sm font-semibold mb-2">
-                    Descuento (%)
-                  </label>
-                  <input
-                    type="number"
-                    name="discount"
-                    min="0"
-                    max="100"
-                    placeholder="13"
-                    className="w-full px-4 py-3 bg-gray-600 border border-gray-500 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                  />
-                </div>
-
-                {/* Stock */}
-                <div>
-                  <label className="block text-gray-400 text-sm font-semibold mb-2">
-                    Stock *
-                  </label>
-                  <input
-                    type="number"
-                    name="stock"
-                    placeholder="45"
-                    className="w-full px-4 py-3 bg-gray-600 border border-gray-500 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                  />
-                </div>
-              </div>
+            {/* Nombre del producto */}
+            <div>
+              <label htmlFor="name" className="block text-gray-400 text-sm font-semibold mb-2">
+                Nombre del producto
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={product.name}
+                onChange={handleChange}
+                placeholder="iPhone 15 Pro Max"
+                className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition"
+              />
             </div>
 
-            {/* Imágenes */}
-            <div className="bg-gray-700 p-6 rounded-lg">
-              <h3 className="text-xl font-bold text-white mb-4">Imágenes</h3>
-              
-              {/* Imagen principal */}
-              <div className="mb-4">
-                <label className="block text-gray-400 text-sm font-semibold mb-2">
-                  Imagen principal *
-                </label>
-                <input
-                  type="url"
-                  name="image"
-                  placeholder="https://images.unsplash.com/photo-..."
-                  className="w-full px-4 py-3 bg-gray-600 border border-gray-500 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                />
-              </div>
-
-              {/* Galería de imágenes */}
+            {/* Precio y Precio original */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-gray-400 text-sm font-semibold mb-2">
-                  Galería de imágenes
+                <label htmlFor="price" className="block text-gray-400 text-sm font-semibold mb-2">
+                  Precio
                 </label>
-                <div className="space-y-2">
-                  <input
-                    type="url"
-                    placeholder="https://images.unsplash.com/..."
-                    className="w-full px-4 py-3 bg-gray-600 border border-gray-500 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                  />
-                  <input
-                    type="url"
-                    placeholder="https://images.unsplash.com/..."
-                    className="w-full px-4 py-3 bg-gray-600 border border-gray-500 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                  />
-                  <input
-                    type="url"
-                    placeholder="https://images.unsplash.com/..."
-                    className="w-full px-4 py-3 bg-gray-600 border border-gray-500 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* Descripción y características */}
-            <div className="bg-gray-700 p-6 rounded-lg">
-              <h3 className="text-xl font-bold text-white mb-4">Descripción y características</h3>
-              
-              {/* Descripción */}
-              <div className="mb-4">
-                <label className="block text-gray-400 text-sm font-semibold mb-2">
-                  Descripción *
-                </label>
-                <textarea
-                  name="description"
-                  rows={3}
-                  placeholder="El iPhone más avanzado. Chip A17 Pro, cámara de 48MP..."
-                  className="w-full px-4 py-3 bg-gray-600 border border-gray-500 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                <input
+                  type="number"
+                  id="price"
+                  name="price"
+                  value={product.price}
+                  onChange={handleChange}
+                  placeholder="1299"
+                  className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition"
                 />
               </div>
-
-              {/* Características */}
               <div>
-                <label className="block text-gray-400 text-sm font-semibold mb-2">
-                  Características
+                <label htmlFor="originalPrice" className="block text-gray-400 text-sm font-semibold mb-2">
+                  Precio original (opcional)
                 </label>
-                <div className="space-y-2">
-                  <input
-                    type="text"
-                    placeholder="Pantalla Super Retina XDR de 6.7 pulgadas"
-                    className="w-full px-4 py-3 bg-gray-600 border border-gray-500 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                  />
-                  <input
-                    type="text"
-                    placeholder="Chip A17 Pro"
-                    className="w-full px-4 py-3 bg-gray-600 border border-gray-500 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                  />
-                  <input
-                    type="text"
-                    placeholder="Sistema de cámaras Pro"
-                    className="w-full px-4 py-3 bg-gray-600 border border-gray-500 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                  />
-                </div>
+                <input
+                  type="number"
+                  id="originalPrice"
+                  name="originalPrice"
+                  value={product.originalPrice}
+                  onChange={handleChange}
+                  placeholder="1499"
+                  className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition"
+                />
               </div>
             </div>
 
-            {/* Especificaciones técnicas */}
-            <div className="bg-gray-700 p-6 rounded-lg">
-              <h3 className="text-xl font-bold text-white mb-4">Especificaciones técnicas</h3>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-gray-400 text-sm font-semibold mb-2">
-                    Pantalla
-                  </label>
-                  <input
-                    type="text"
-                    name="screen"
-                    placeholder="6.7 pulgadas"
-                    className="w-full px-4 py-3 bg-gray-600 border border-gray-500 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-gray-400 text-sm font-semibold mb-2">
-                    Procesador
-                  </label>
-                  <input
-                    type="text"
-                    name="processor"
-                    placeholder="A17 Pro"
-                    className="w-full px-4 py-3 bg-gray-600 border border-gray-500 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-gray-400 text-sm font-semibold mb-2">
-                    RAM
-                  </label>
-                  <input
-                    type="text"
-                    name="ram"
-                    placeholder="8GB"
-                    className="w-full px-4 py-3 bg-gray-600 border border-gray-500 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-gray-400 text-sm font-semibold mb-2">
-                    Almacenamiento
-                  </label>
-                  <input
-                    type="text"
-                    name="storage"
-                    placeholder="256GB"
-                    className="w-full px-4 py-3 bg-gray-600 border border-gray-500 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-gray-400 text-sm font-semibold mb-2">
-                    Cámara
-                  </label>
-                  <input
-                    type="text"
-                    name="camera"
-                    placeholder="48MP + 12MP + 12MP"
-                    className="w-full px-4 py-3 bg-gray-600 border border-gray-500 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-gray-400 text-sm font-semibold mb-2">
-                    Batería
-                  </label>
-                  <input
-                    type="text"
-                    name="battery"
-                    placeholder="4422 mAh"
-                    className="w-full px-4 py-3 bg-gray-600 border border-gray-500 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                  />
-                </div>
-
-                <div className="md:col-span-2">
-                  <label className="block text-gray-400 text-sm font-semibold mb-2">
-                    Sistema operativo
-                  </label>
-                  <input
-                    type="text"
-                    name="os"
-                    placeholder="iOS 17"
-                    className="w-full px-4 py-3 bg-gray-600 border border-gray-500 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                  />
-                </div>
-              </div>
+            {/* Descuento */}
+            <div>
+              <label htmlFor="discount" className="block text-gray-400 text-sm font-semibold mb-2">
+                Descuento (%)
+              </label>
+              <input
+                type="number"
+                id="discount"
+                name="discount"
+                value={product.discount}
+                onChange={handleChange}
+                placeholder="15"
+                min="0"
+                max="100"
+                className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition"
+              />
             </div>
 
-            {/* Colores */}
-            <div className="bg-gray-700 p-6 rounded-lg">
-              <h3 className="text-xl font-bold text-white mb-4">Colores disponibles</h3>
-              
-              <div className="space-y-2">
-                <input
-                  type="text"
-                  placeholder="Titanio Natural"
-                  className="w-full px-4 py-3 bg-gray-600 border border-gray-500 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                />
-                <input
-                  type="text"
-                  placeholder="Titanio Azul"
-                  className="w-full px-4 py-3 bg-gray-600 border border-gray-500 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                />
-                <input
-                  type="text"
-                  placeholder="Titanio Blanco"
-                  className="w-full px-4 py-3 bg-gray-600 border border-gray-500 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                />
-              </div>
+            {/* URL de la imagen */}
+            <div>
+              <label htmlFor="image" className="block text-gray-400 text-sm font-semibold mb-2">
+                URL de la imagen
+              </label>
+              <input
+                type="url"
+                id="image"
+                name="image"
+                value={product.image}
+                onChange={handleChange}
+                placeholder="https://example.com/image.jpg"
+                className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition"
+              />
             </div>
 
             {/* Rating y Reviews */}
-            <div className="bg-gray-700 p-6 rounded-lg">
-              <h3 className="text-xl font-bold text-white mb-4">Valoración</h3>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-gray-400 text-sm font-semibold mb-2">
-                    Calificación *
-                  </label>
-                  <input
-                    type="number"
-                    name="rating"
-                    step="0.1"
-                    min="0"
-                    max="5"
-                    placeholder="4.9"
-                    className="w-full px-4 py-3 bg-gray-600 border border-gray-500 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-gray-400 text-sm font-semibold mb-2">
-                    Número de reseñas *
-                  </label>
-                  <input
-                    type="number"
-                    name="reviews"
-                    placeholder="2847"
-                    className="w-full px-4 py-3 bg-gray-600 border border-gray-500 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                  />
-                </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label htmlFor="rating" className="block text-gray-400 text-sm font-semibold mb-2">
+                  Calificación
+                </label>
+                <input
+                  type="number"
+                  id="rating"
+                  name="rating"
+                  value={product.rating}
+                  onChange={handleChange}
+                  placeholder="4.8"
+                  step="0.1"
+                  min="0"
+                  max="5"
+                  className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition"
+                />
+              </div>
+              <div>
+                <label htmlFor="reviews" className="block text-gray-400 text-sm font-semibold mb-2">
+                  Número de reseñas
+                </label>
+                <input
+                  type="number"
+                  id="reviews"
+                  name="reviews"
+                  value={product.reviews}
+                  onChange={handleChange}
+                  placeholder="248"
+                  className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition"
+                />
               </div>
             </div>
 
-            {/* Opciones adicionales */}
-            <div className="bg-gray-700 p-6 rounded-lg">
-              <h3 className="text-xl font-bold text-white mb-4">Opciones adicionales</h3>
-              
-              <div className="space-y-3">
-                <label className="flex items-center">
-                  <input
-                    type="checkbox"
-                    name="isFeatured"
-                    className="w-5 h-5 bg-gray-600 border-gray-500 rounded text-yellow-400 focus:ring-yellow-400 focus:ring-2"
-                  />
-                  <span className="ml-3 text-gray-300 font-semibold">
-                    Producto destacado
-                  </span>
-                </label>
-
-                <label className="flex items-center">
-                  <input
-                    type="checkbox"
-                    name="isNew"
-                    className="w-5 h-5 bg-gray-600 border-gray-500 rounded text-yellow-400 focus:ring-yellow-400 focus:ring-2"
-                  />
-                  <span className="ml-3 text-gray-300 font-semibold">
-                    Producto nuevo
-                  </span>
-                </label>
-
-                <label className="flex items-center">
-                  <input
-                    type="checkbox"
-                    name="freeShipping"
-                    className="w-5 h-5 bg-gray-600 border-gray-500 rounded text-yellow-400 focus:ring-yellow-400 focus:ring-2"
-                  />
-                  <span className="ml-3 text-gray-300 font-semibold">
-                    Envío gratis
-                  </span>
-                </label>
-              </div>
+            {/* Envío gratis */}
+            <div className="flex items-center">
+              <input
+                type="checkbox"
+                name="freeShipping"
+                value={product.freeShipping.toString()}
+                checked={product.freeShipping}
+                onChange={handleChange}
+                id="freeShipping"
+                className="w-5 h-5 bg-gray-700 border-gray-600 rounded text-yellow-400 focus:ring-yellow-400 focus:ring-2"
+              />
+              <label htmlFor="freeShipping" className="ml-3 text-gray-400 font-semibold">
+                Envío gratis
+              </label>
             </div>
 
             {/* Botones */}
@@ -457,6 +236,18 @@ const Dashboard = () => {
               </button>
             </div>
           </form>
+        </div>
+
+        {/* Vista previa de productos (opcional) */}
+        <div className="max-w-3xl mx-auto mt-8">
+          <div className="bg-gray-800 rounded-lg border border-gray-700 p-6">
+            <h3 className="text-xl font-bold text-white mb-4">
+              Productos recientes
+            </h3>
+            <div className="text-gray-400 text-center py-8">
+              No hay productos agregados aún
+            </div>
+          </div>
         </div>
       </div>
     </div>
