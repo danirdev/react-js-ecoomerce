@@ -12,7 +12,7 @@ const CardProduct: React.FC<Props> = ({ product }) => {
   const {dispatch} = useCartContext()
 
   const item: CartProduct = {
-    id: product.id,
+    id: product.id ?? 0,
     name: product.name,
     price: product.price,
     image: product.image,
